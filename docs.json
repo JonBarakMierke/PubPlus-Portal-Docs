@@ -21,7 +21,7 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Portal Documentation",
+        "tab": "Portal Docs",
         "icon": "screen-share",
         "dropdowns": [
           {
@@ -31,6 +31,10 @@
             ]
           }
         ]
+      },
+      {
+        "tab": "Strata Print Docs",
+        "icon": "layers"
       }
     ]
   },
