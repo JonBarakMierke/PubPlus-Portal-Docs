@@ -117,5 +117,8 @@
   },
   "footer": {
     "socials": {}
+  },
+  "interaction": {
+    "drilldown": true
   }
 }
