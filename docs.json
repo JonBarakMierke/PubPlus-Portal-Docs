@@ -23,17 +23,27 @@
       {
         "tab": "Portal Docs",
         "icon": "layers",
-        "groups": [
+        "pages": [
           {
             "group": "Admin Panel",
             "pages": []
           },
           {
             "group": "Client Portal",
+            "icon": "user",
             "pages": [
               "customer"
             ]
-          }
+          },
+          {
+            "group": "Database",
+            "pages": [
+              "lunar-products",
+              "overview"
+            ]
+          },
+          "developer-info",
+          "overview-1"
         ]
       }
     ]

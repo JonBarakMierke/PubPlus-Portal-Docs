@@ -1,0 +1,242 @@
+---
+title: "Overview"
+---
+
+The database is comprised of a variety of tables. The origin of their migration files is all different. Some are from Lunar, others are from packages or were added internally.\
+Modifications have been made to some of these third-party database tables.
+
+## All Tables
+
+```text
++--------------------------------------------+
+| activity_log                               |
+| attachables                                |
+| attachments                                |
+| cache                                      |
+| cache_locks                                |
+| customer_product                           |
+| customer_settings                          |
+| customer_themes                            |
+| failed_jobs                                |
+| geo_profiles                               |
+| geo_settings                               |
+| job_batches                                |
+| jobs                                       |
+| lunar_addresses                            |
+| lunar_assets                               |
+| lunar_attributables                        |
+| lunar_attribute_groups                     |
+| lunar_attributes                           |
+| lunar_brand_collection                     |
+| lunar_brand_discount                       |
+| lunar_brands                               |
+| lunar_cart_addresses                       |
+| lunar_cart_line_discount                   |
+| lunar_cart_lines                           |
+| lunar_carts                                |
+| lunar_channelables                         |
+| lunar_channels                             |
+| lunar_collection_customer_group            |
+| lunar_collection_discount                  |
+| lunar_collection_groups                    |
+| lunar_collection_product                   |
+| lunar_collections                          |
+| lunar_countries                            |
+| lunar_currencies                           |
+| lunar_customer_customer_group              |
+| lunar_customer_discount                    |
+| lunar_customer_group_discount              |
+| lunar_customer_group_product               |
+| lunar_customer_groups                      |
+| lunar_customer_user                        |
+| lunar_customers                            |
+| lunar_discount_user                        |
+| lunar_discountables                        |
+| lunar_discounts                            |
+| lunar_languages                            |
+| lunar_media_product_variant                |
+| lunar_order_addresses                      |
+| lunar_order_lines                          |
+| lunar_orders                               |
+| lunar_prices                               |
+| lunar_product_associations                 |
+| lunar_product_option_value_product_variant |
+| lunar_product_option_values                |
+| lunar_product_options                      |
+| lunar_product_product_option               |
+| lunar_product_types                        |
+| lunar_product_variants                     |
+| lunar_product_variants_ext                 |
+| lunar_products                             |
+| lunar_states                               |
+| lunar_stripe_payment_intents               |
+| lunar_taggables                            |
+| lunar_tags                                 |
+| lunar_tax_classes                          |
+| lunar_tax_rate_amounts                     |
+| lunar_tax_rates                            |
+| lunar_tax_zone_countries                   |
+| lunar_tax_zone_customer_groups             |
+| lunar_tax_zone_postcodes                   |
+| lunar_tax_zone_states                      |
+| lunar_tax_zones                            |
+| lunar_transactions                         |
+| lunar_urls                                 |
+| media                                      |
+| migrations                                 |
+| model_has_permissions                      |
+| model_has_roles                            |
+| notifications                              |
+| password_reset_tokens                      |
+| permissions                                |
+| portal_announcement_user                   |
+| portal_announcements                       |
+| pricing_extensions                         |
+| product_inputs                             |
+| pulse_aggregates                           |
+| pulse_entries                              |
+| pulse_values                               |
+| role_has_permissions                       |
+| roles                                      |
+| seo                                        |
+| sessions                                   |
+| support_articles                           |
+| users                                      |
+| work_post_blocks                           |
+| work_posts                                 |
++--------------------------------------------+
+```
+
+## Documentation of the database
+
+Only tables that need custom documentation will be featured. The other tables are either self-explanatory or unchanged, and the third-party documentation should suffice.
+
+## Lunar Tables
+
+```text
+| lunar_addresses                            |
+| lunar_assets                               |
+| lunar_attributables                        |
+| lunar_attribute_groups                     |
+| lunar_attributes                           |
+| lunar_brand_collection                     |
+| lunar_brand_discount                       |
+| lunar_brands                               |
+| lunar_cart_addresses                       |
+| lunar_cart_line_discount                   |
+| lunar_cart_lines                           |
+| lunar_carts                                |
+| lunar_channelables                         |
+| lunar_channels                             |
+| lunar_collection_customer_group            |
+| lunar_collection_discount                  |
+| lunar_collection_groups                    |
+| lunar_collection_product                   |
+| lunar_collections                          |
+| lunar_countries                            |
+| lunar_currencies                           |
+| lunar_customer_customer_group              |
+| lunar_customer_discount                    |
+| lunar_customer_group_discount              |
+| lunar_customer_group_product               |
+| lunar_customer_groups                      |
+| lunar_customer_user                        |
+| lunar_customers                            |
+| lunar_discount_user                        |
+| lunar_discountables                        |
+| lunar_discounts                            |
+| lunar_languages                            |
+| lunar_media_product_variant                |
+| lunar_order_addresses                      |
+| lunar_order_lines                          |
+| lunar_orders                               |
+| lunar_prices                               |
+| lunar_product_associations                 |
+| lunar_product_option_value_product_variant |
+| lunar_product_option_values                |
+| lunar_product_options                      |
+| lunar_product_product_option               |
+| lunar_product_types                        |
+| lunar_product_variants                     |
+| lunar_products                             |
+| lunar_states                               |
+| lunar_stripe_payment_intents               |
+| lunar_taggables                            |
+| lunar_tags                                 |
+| lunar_tax_classes                          |
+| lunar_tax_rate_amounts                     |
+| lunar_tax_rates                            |
+| lunar_tax_zone_countries                   |
+| lunar_tax_zone_customer_groups             |
+| lunar_tax_zone_postcodes                   |
+| lunar_tax_zone_states                      |
+| lunar_tax_zones                            |
+| lunar_transactions                         |
+| lunar_urls  								 |
+```
+
+## Our Work Posts Tables
+
+```text
+| work_post_blocks                           |
+| work_posts                                 |
+```
+
+## Portal Customer Tables
+
+```text
+| customer_product                           |
+| customer_settings                          |
+| customer_themes                            |
+```
+
+## Other tables related to Lunar
+
+```text
+| portal_announcement_user                   |
+| portal_announcements                       |
+| pricing_extensions                         |
+| product_inputs                             |
+```
+
+## Extending Third-Party DB Tables
+
+Extending third-party DB tables must always be done by prefixing the internal column with `p_`.\\
+
+```text highlight={12}
+mysql> DESCRIBE lunar_product_variants;
++--------------------+-----------------+------+-----+---------+----------------+
+| Field              | Type            | Null | Key | Default | Extra          |
++--------------------+-----------------+------+-----+---------+----------------+
+| id                 | bigint unsigned | NO   | PRI | NULL    | auto_increment |
+| product_id         | bigint unsigned | NO   | MUL | NULL    |                |
+| tax_class_id       | bigint unsigned | NO   | MUL | NULL    |                |
+| attribute_data     | json            | YES  |     | NULL    |                |
+| tax_ref            | varchar(255)    | YES  | MUL | NULL    |                |
+| unit_quantity      | int unsigned    | NO   | MUL | 1       |                |
+| min_quantity       | int unsigned    | NO   | MUL | 1       |                |
+| p_max_quantity     | int unsigned    | YES  |     | 100     |                |
+| quantity_increment | int unsigned    | NO   | MUL | 1       |                |
+| sku                | varchar(255)    | YES  | MUL | NULL    |                |
+| gtin               | varchar(255)    | YES  | MUL | NULL    |                |
+| mpn                | varchar(255)    | YES  | MUL | NULL    |                |
+| ean                | varchar(255)    | YES  | MUL | NULL    |                |
+| length_value       | decimal(10,4)   | YES  | MUL | 0.0000  |                |
+| length_unit        | varchar(255)    | YES  |     | mm      |                |
+| width_value        | decimal(10,4)   | YES  | MUL | 0.0000  |                |
+| width_unit         | varchar(255)    | YES  |     | mm      |                |
+| height_value       | decimal(10,4)   | YES  | MUL | 0.0000  |                |
+| height_unit        | varchar(255)    | YES  |     | mm      |                |
+| weight_value       | decimal(10,4)   | YES  | MUL | 0.0000  |                |
+| weight_unit        | varchar(255)    | YES  |     | mm      |                |
+| volume_value       | decimal(10,4)   | YES  | MUL | 0.0000  |                |
+| volume_unit        | varchar(255)    | YES  |     | mm      |                |
+| shippable          | tinyint(1)      | NO   | MUL | 1       |                |
+| stock              | int             | NO   | MUL | 0       |                |
+| backorder          | int             | NO   | MUL | 0       |                |
+| purchasable        | varchar(255)    | NO   | MUL | always  |                |
+| created_at         | timestamp       | YES  |     | NULL    |                |
+| updated_at         | timestamp       | YES  |     | NULL    |                |
+| deleted_at         | timestamp       | YES  | MUL | NULL    |                |
++--------------------+-----------------+------+-----+---------+----------------+
+```

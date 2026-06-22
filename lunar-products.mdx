@@ -1,0 +1,46 @@
+---
+title: "Lunar Products"
+---
+
+## Product Variants Table
+
+<Note>
+  This table has been manually extended internally. The following tables are NOT default on this table.
+
+  ```text
+  p_max_quantity 
+  ```
+</Note>
+
+```text
+| id                 | bigint unsigned | NO   | PRI | NULL    | auto_increment |
+| product_id         | bigint unsigned | NO   | MUL | NULL    |                |
+| tax_class_id       | bigint unsigned | NO   | MUL | NULL    |                |
+| attribute_data     | json            | YES  |     | NULL    |                |
+| tax_ref            | varchar(255)    | YES  | MUL | NULL    |                |
+| unit_quantity      | int unsigned    | NO   | MUL | 1       |                |
+| min_quantity       | int unsigned    | NO   | MUL | 1       |                |
+| p_max_quantity     | int unsigned    | YES  |     | 100     |                |
+| quantity_increment | int unsigned    | NO   | MUL | 1       |                |
+| sku                | varchar(255)    | YES  | MUL | NULL    |                |
+| gtin               | varchar(255)    | YES  | MUL | NULL    |                |
+| mpn                | varchar(255)    | YES  | MUL | NULL    |                |
+| ean                | varchar(255)    | YES  | MUL | NULL    |                |
+| length_value       | decimal(10,4)   | YES  | MUL | 0.0000  |                |
+| length_unit        | varchar(255)    | YES  |     | mm      |                |
+| width_value        | decimal(10,4)   | YES  | MUL | 0.0000  |                |
+| width_unit         | varchar(255)    | YES  |     | mm      |                |
+| height_value       | decimal(10,4)   | YES  | MUL | 0.0000  |                |
+| height_unit        | varchar(255)    | YES  |     | mm      |                |
+| weight_value       | decimal(10,4)   | YES  | MUL | 0.0000  |                |
+| weight_unit        | varchar(255)    | YES  |     | mm      |                |
+| volume_value       | decimal(10,4)   | YES  | MUL | 0.0000  |                |
+| volume_unit        | varchar(255)    | YES  |     | mm      |                |
+| shippable          | tinyint(1)      | NO   | MUL | 1       |                |
+| stock              | int             | NO   | MUL | 0       |                |
+| backorder          | int             | NO   | MUL | 0       |                |
+| purchasable        | varchar(255)    | NO   | MUL | always  |                |
+| created_at         | timestamp       | YES  |     | NULL    |                |
+| updated_at         | timestamp       | YES  |     | NULL    |                |
+| deleted_at         | timestamp       | YES  | MUL | NULL    |                |
+```
