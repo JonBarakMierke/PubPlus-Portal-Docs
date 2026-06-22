@@ -13,7 +13,10 @@
     "library": "lucide"
   },
   "contextual": {
-    "options": ["copy", "view", "assistant"]
+    "options": [
+      "view",
+      "copy"
+    ]
   },
   "navigation": {
     "tabs": [
@@ -120,5 +123,8 @@
   },
   "interaction": {
     "drilldown": true
+  },
+  "styling": {
+    "eyebrows": "section"
   }
 }
