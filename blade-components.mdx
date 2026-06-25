@@ -1,0 +1,37 @@
+---
+title: "Blade Components"
+---
+
+## Call-to-Action
+
+```text
+<x-sections.cta>
+      <x-slot:heading>
+          Ready to place your order?
+      </x-slot:heading>
+
+      <x-slot:subtext>
+          Browse the store and check out in minutes!
+      </x-slot:subtext>
+
+      <x-slot:actions>
+          <x-ui.button
+              href="{{ route('public.store.view') }}"
+              size="lg"
+              class="bg-grad-accent-left border-0 text-white font-typold font-bold tracking-wide shadow-xl shadow-accent/20 pb-1"
+              iconAfter="arrow-right"
+          >
+              Shop Now
+          </x-ui.button>
+      </x-slot:actions>
+
+      <x-slot:footer>
+          <a href="mailto:support@pubplus.net" class="hover:underline">
+              support@pubplus.net
+          </a>
+          <a href="tel:+18777015087" class="hover:underline">
+              (877) 701-5087
+          </a>
+      </x-slot:footer>
+</x-sections.cta>
+```

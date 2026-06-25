@@ -51,7 +51,8 @@
             "pages": [
               "tax"
             ]
-          }
+          },
+          "blade-components"
         ]
       }
     ]
