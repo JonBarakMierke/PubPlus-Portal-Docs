@@ -34,14 +34,14 @@ Kebab-case in Blade tags, e.g. `image-position="left"`, `image-style="bleed"`.
 
 ## Slots
 
-| Slot | Required | Description |
-| :-- | :-- | :-- |
-| `eyebrow` | No | Small uppercase label/pill above the heading. |
-| `heading` | No | Main `<h2>` (rendered via `x-ui.heading`). Accepts class="" all classes will have "!" prepended to override Sheaf's styling. |
-| `subtext` | No | Supporting paragraph under the heading. |
-| `actions` | No | Button(s) — typically an `x-ui.button`. |
-| `footer` | No | Secondary links, e.g. contact info. |
-| `illustration` | `split` only | Image, SVG, or other visual for the image column. Ignored by `centered`. |
+| Slot | Required |  | Description |
+| :-- | :-- | :-- | :-- |
+| `eyebrow` | No | Small uppercase label/pill above the heading. |  |
+| `heading` | No | Main `<h2>` (rendered via `x-ui.heading`). Accepts class="" all classes will have "!" prepended to override Sheaf's styling. |  |
+| `subtext` | No | Supporting paragraph under the heading. |  |
+| `actions` | No | Button(s) — typically an `x-ui.button`. |  |
+| `footer` | No | Secondary links, e.g. contact info. |  |
+| `illustration` | `split` only | Image, SVG, or other visual for the image column. Ignored by `centered`. |  |
 
 All slots are optional and independently `@isset`-guarded — omit anything you don't need.
 
@@ -215,6 +215,7 @@ Themes are a fixed, brand-approved set defined once in `index.blade.php`. There 
 ## Pending / Not Yet Built
 
 - **Icon-ring / accordion CTA pattern** (dark navy background, orbiting icon badges around the image, accordion list instead of heading\+subtext\+button). This is structurally different enough (accordion content, decorative icon layer) that it should likely be its own section component (e.g. `x-sections.feature-accordion`) rather than a CTA variant.
+- Need to test/integrate the ability for accordion and contact forms to be on the card too.
 - Improved compact version
   <Frame>
     ![Image](/images/image.png)
