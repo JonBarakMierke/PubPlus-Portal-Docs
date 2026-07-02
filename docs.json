@@ -60,6 +60,12 @@
                 "pages": [
                   "cta"
                 ]
+              },
+              {
+                "group": "UI",
+                "pages": [
+                  "eyebrow"
+                ]
               }
             ]
           }

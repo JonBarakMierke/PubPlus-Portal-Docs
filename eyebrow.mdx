@@ -1,0 +1,44 @@
+---
+title: "Eyebrow"
+---
+
+## index.php
+
+```html
+@props([
+    'theme' => 'dark', // 'dark' | 'light' | 'brand' | 'navy' — mirrors CTA themes
+])
+
+@php
+    // Same palette concept as the CTA component — keep these in sync if you
+    // add/edit a theme in sections/cta/index.blade.php.
+    $styles = [
+        'dark'  => 'bg-white/15 border-white/30 text-neutral-500',
+        'light' => 'bg-neutral-900/5 border-neutral-900/10 text-neutral-500',
+        'brand' => 'bg-white/15 border-white/20 text-white',
+        'navy'  => 'bg-white/10 border-white/15 text-neutral-300',
+    ];
+
+    $classes = $styles[$theme] ?? $styles['dark'];
+@endphp
+
+<span {{ $attributes->class([
+    'inline-flex items-center gap-1.5 border rounded-full px-3 py-1 font-typold text-xs tracking-widest uppercase w-fit',
+    $classes,
+]) }}>
+    {{ $slot }}
+</span>
+```
+
+## Usage
+
+<Frame>
+  ![Image](/images/image-9.png)
+</Frame>
+
+```html
+<x-ui.eyebrow theme="light">Eyebrow</x-ui.eyebrow>
+<x-ui.eyebrow theme="dark">Eyebrow</x-ui.eyebrow>
+<x-ui.eyebrow theme="brand">Eyebrow</x-ui.eyebrow>
+<x-ui.eyebrow theme="navy">Eyebrow</x-ui.eyebrow>
+```
